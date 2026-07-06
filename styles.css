@@ -137,7 +137,7 @@ p  { margin: 0; }
 .brand-name { color: #fff; font-weight: 800; font-size: 1.16rem; letter-spacing: -0.01em; }
 .brand-sub  { color: var(--green-bright); font-weight: 700; font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; }
 
-.main-nav { display: flex; align-items: center; gap: 6px; }
+.main-nav { display: flex; align-items: center; gap: 6px; margin-left: auto; }
 .nav-link {
   color: #dfe8e5;
   font-weight: 600;
@@ -147,6 +147,21 @@ p  { margin: 0; }
 }
 .nav-link:hover { color: #fff; background: rgba(255,255,255,.08); }
 .nav-call { margin-left: 8px; --btn-pad: 11px 18px; }
+
+.header-actions { display: flex; align-items: center; gap: 8px; }
+.header-call {
+  display: none;               /* shown only on the mobile header */
+  align-items: center;
+  gap: 7px;
+  background: var(--grad-brand);
+  color: #fff;
+  font-weight: 800;
+  font-size: .95rem;
+  padding: 10px 16px;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(20,154,60,.35);
+}
+.header-call svg { width: 17px; height: 17px; fill: #fff; }
 
 .nav-toggle {
   display: none;
@@ -200,7 +215,7 @@ p  { margin: 0; }
   gap: 10px;
   padding: 26px 22px;
 }
-.trust-item { display: flex; align-items: center; gap: 14px; padding: 8px 6px; }
+.trust-item { display: flex; align-items: center; gap: 14px; padding: 8px 6px; min-width: 0; }
 .trust-ico {
   flex: none;
   width: 52px; height: 52px;
@@ -211,7 +226,7 @@ p  { margin: 0; }
   box-shadow: 0 8px 18px rgba(20,154,60,.35);
 }
 .trust-ico svg { width: 26px; height: 26px; fill: #fff; }
-.trust-label { font-weight: 700; font-size: 1rem; line-height: 1.25; }
+.trust-label { font-weight: 700; font-size: 1rem; line-height: 1.25; min-width: 0; overflow-wrap: break-word; }
 
 /* ---------- Services ---------- */
 .services { background: var(--grey-bg); }
@@ -488,24 +503,6 @@ p  { margin: 0; }
 .footer-bottom .container { padding-top: 18px; padding-bottom: 18px; }
 .footer-bottom p { font-size: .86rem; color: #8ea59d; }
 
-/* ---------- Sticky mobile call bar ---------- */
-.mobile-call-bar {
-  display: none;
-  position: fixed;
-  left: 14px; right: 14px; bottom: 14px;
-  z-index: 70;
-  background: var(--grad-brand);
-  color: #fff;
-  font-weight: 800;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 15px;
-  border-radius: 999px;
-  box-shadow: 0 12px 30px rgba(10,46,40,.4);
-}
-.mobile-call-bar .ico { width: 1.2em; height: 1.2em; fill: currentColor; }
-
 /* =========================================================
    Responsive
    ========================================================= */
@@ -518,6 +515,10 @@ p  { margin: 0; }
 
 @media (max-width: 860px) {
   .nav-toggle { display: flex; }
+  .header-call { display: inline-flex; }
+  .nav-call { display: none; }              /* header call button replaces it on mobile */
+  .header-inner { min-height: 72px; }
+  .brand-logo { height: 52px; }
   .main-nav {
     position: absolute;
     top: 100%; left: 0; right: 0;
@@ -535,29 +536,37 @@ p  { margin: 0; }
   }
   .main-nav.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
   .nav-link { padding: 13px 12px; font-size: 1.05rem; }
-  .nav-call { margin: 8px 0 0; --btn-pad: 14px 18px; }
+
+  /* Tighten vertical rhythm so the page isn't endless scrolling */
+  .section { padding: 48px 0; }
+  .section-head { margin-bottom: 28px; }
+  .hero-content { padding: 78px 22px 56px; }
+  .hero-actions { margin-top: 26px; }
+  .trust-grid { padding: 20px 22px; }
+  .cta-inner { padding: 48px 22px; }
+  .service-cards { grid-template-columns: 1fr; gap: 20px; }
 }
 
 @media (max-width: 760px) {
-  .trust-grid { grid-template-columns: 1fr 1fr; gap: 14px 10px; }
-  .service-cards { grid-template-columns: 1fr; }
-  .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; }
-  .mobile-call-bar { display: flex; }
-  .nav-call { display: none; }              /* avoid duplicate call CTA on mobile header */
-  body { padding-bottom: 76px; }            /* room for sticky call bar */
+  .trust-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .trust-item { gap: 12px; padding: 6px 4px; }
+  .trust-ico { width: 46px; height: 46px; }
+  .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 168px; gap: 12px; }
+  .g-item figcaption { padding: 22px 12px 11px; font-size: .9rem; }
 }
 
 @media (max-width: 480px) {
   .container { padding: 0 16px; }
+  .section { padding: 42px 0; }
+  .hero-content { padding: 68px 16px 48px; }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .hero-actions .btn { width: 100%; }
-  .trust-grid { grid-template-columns: 1fr; }
-  .trust-item { justify-content: flex-start; }
-  .service-list { grid-template-columns: 1fr; }
+  .service-list { grid-template-columns: 1fr 1fr; }
   .form-grid { grid-template-columns: 1fr; }
-  .gallery { grid-template-columns: 1fr; grid-auto-rows: 230px; }
-  .brand-sub { font-size: .66rem; }
-  .footer-inner { flex-direction: column; align-items: flex-start; }
+  .brand-sub { font-size: .64rem; }
+  .header-call span { display: none; }       /* icon-only call button on the tightest screens */
+  .header-call { padding: 0; width: 44px; height: 44px; justify-content: center; }
+  .footer-inner { flex-direction: column; align-items: flex-start; gap: 18px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
