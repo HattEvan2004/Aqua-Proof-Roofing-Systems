@@ -441,13 +441,7 @@ p  { margin: 0; }
 .form-status.ok  { color: var(--green-dark); }
 .form-status.err { color: #c0392b; }
 
-/* ---------- Contact ---------- */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(30px, 5vw, 60px);
-  align-items: center;
-}
+/* ---------- Phone block (used in the quote section) ---------- */
 .phone-block {
   display: inline-flex;
   align-items: center;
@@ -471,20 +465,6 @@ p  { margin: 0; }
 .phone-ico svg { width: 30px; height: 30px; fill: #fff; }
 .phone-label { display: block; color: var(--text-soft); font-weight: 600; font-size: .9rem; }
 .phone-number { display: block; font-size: clamp(1.6rem, 4vw, 2.1rem); font-weight: 800; color: var(--ink); letter-spacing: -0.02em; }
-
-.contact-cards { display: grid; gap: 16px; }
-.info-card {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-left: 5px solid var(--green);
-  border-radius: var(--radius);
-  padding: 22px 24px;
-  box-shadow: var(--shadow-sm);
-  transition: transform .18s ease, box-shadow .18s ease, border-left-color .18s ease;
-}
-.info-card:hover { transform: translateX(4px); box-shadow: var(--shadow-md); border-left-color: var(--teal); }
-.info-card h3 { color: var(--ink); }
-.info-card p { color: var(--text-soft); margin-top: 6px; }
 
 /* ---------- Footer ---------- */
 .site-footer { background: var(--ink); color: #cdd8d4; }
@@ -533,7 +513,6 @@ p  { margin: 0; }
   .about-grid { grid-template-columns: 1fr; }
   .about-media { order: 2; }
   .about-media img { max-height: 380px; }
-  .contact-grid { grid-template-columns: 1fr; }
   .quote-grid { grid-template-columns: 1fr; }
 }
 

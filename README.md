@@ -17,8 +17,7 @@ logo colours: bright roofing green, deep teal, near-black, white, and light grey
 - About Aqua-Proof
 - Project photo gallery (real job-site photos)
 - Call-to-action band
-- **Request a Free Quote** form (Formspree-ready — see below)
-- Contact section with the phone number
+- **Request a Free Quote** form with the phone number (Formspree-ready — see below)
 - Footer
 
 All photos are the real project images supplied in this repository
