@@ -117,7 +117,7 @@
                 <li>Built up roofing</li>
                 <li>Hot rubber waterproofing</li>
               </ul>
-              <a href="tel:9024414011" class="service-link">Get a flat roof quote &rarr;</a>
+              <a href="#quote" class="service-link">Get a flat roof quote &rarr;</a>
             </div>
           </article>
 
@@ -136,7 +136,7 @@
                 <li>Cedar shingles</li>
                 <li>Slate</li>
               </ul>
-              <a href="tel:9024414011" class="service-link">Get a sloped roof quote &rarr;</a>
+              <a href="#quote" class="service-link">Get a sloped roof quote &rarr;</a>
             </div>
           </article>
         </div>
@@ -168,7 +168,7 @@
             <li><span class="dot"></span> Waterproofing &amp; reliable roof repairs</li>
             <li><span class="dot"></span> Over 30 years of hands-on experience</li>
           </ul>
-          <a href="#contact" class="btn btn-primary">Get in Touch</a>
+          <a href="#quote" class="btn btn-primary">Get a Free Quote</a>
         </div>
       </div>
     </section>
@@ -215,10 +215,101 @@
       <div class="container cta-inner">
         <h2>Need a roof repaired, replaced, or waterproofed?</h2>
         <p>Call Aqua-Proof Roofing Systems today.</p>
-        <a href="tel:9024414011" class="btn btn-call btn-lg">
-          <svg viewBox="0 0 24 24" aria-hidden="true" class="ico"><path d="M6.6 10.8a15.5 15.5 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11.4 11.4 0 003.5.56 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.56 3.5 1 1 0 01-.24 1z"/></svg>
-          Call 902.441.4011
-        </a>
+        <div class="cta-actions">
+          <a href="tel:9024414011" class="btn btn-call btn-lg">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="ico"><path d="M6.6 10.8a15.5 15.5 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11.4 11.4 0 003.5.56 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.56 3.5 1 1 0 01-.24 1z"/></svg>
+            Call 902.441.4011
+          </a>
+          <a href="#quote" class="btn btn-cta-outline btn-lg">Get a Free Quote</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Quote form ===== -->
+    <section class="section quote" id="quote">
+      <div class="container quote-grid">
+        <div class="quote-intro">
+          <span class="kicker">Free Quote</span>
+          <h2>Request Your Free Roofing Quote</h2>
+          <p class="section-lead">Tell us a bit about your roof and we'll get back to you with a no-obligation quote. Prefer to talk? Call us any time.</p>
+
+          <ul class="quote-points">
+            <li><span class="dot"></span> Commercial &amp; residential</li>
+            <li><span class="dot"></span> Flat, sloped &amp; waterproofing</li>
+            <li><span class="dot"></span> Fast, friendly response</li>
+            <li><span class="dot"></span> Over 30 years of experience</li>
+          </ul>
+
+          <a href="tel:9024414011" class="phone-block">
+            <span class="phone-ico">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 006.6 6.6l2.2-2.2a1 1 0 011-.24 11.4 11.4 0 003.5.56 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.4 11.4 0 00.56 3.5 1 1 0 01-.24 1z"/></svg>
+            </span>
+            <span class="phone-text">
+              <span class="phone-label">Rather call?</span>
+              <span class="phone-number">902.441.4011</span>
+            </span>
+          </a>
+        </div>
+
+        <div class="quote-card">
+          <form id="quote-form" class="quote-form" novalidate>
+            <input type="hidden" name="_subject" value="New Roofing Quote Request – Aqua-Proof" />
+            <!-- Honeypot field for basic spam protection -->
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="hp" aria-hidden="true" />
+
+            <div class="form-row">
+              <label for="q-name">Name <span class="req">*</span></label>
+              <input id="q-name" name="name" type="text" autocomplete="name" required placeholder="Your name" />
+            </div>
+
+            <div class="form-grid">
+              <div class="form-row">
+                <label for="q-phone">Phone <span class="req">*</span></label>
+                <input id="q-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="(902) 441-4011" />
+              </div>
+              <div class="form-row">
+                <label for="q-email">Email <span class="req">*</span></label>
+                <input id="q-email" name="email" type="email" autocomplete="email" required placeholder="you@email.com" />
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-row">
+                <label for="q-property">Property type</label>
+                <select id="q-property" name="property_type">
+                  <option value="Residential">Residential</option>
+                  <option value="Commercial">Commercial</option>
+                </select>
+              </div>
+              <div class="form-row">
+                <label for="q-service">Service needed</label>
+                <select id="q-service" name="service">
+                  <option value="Flat roofing">Flat roofing</option>
+                  <option value="Sloped roofing">Sloped roofing</option>
+                  <option value="Roof repair">Roof repair</option>
+                  <option value="Waterproofing">Waterproofing</option>
+                  <option value="Not sure yet">Not sure yet</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label for="q-location">Property location <span class="opt">(optional)</span></label>
+              <input id="q-location" name="location" type="text" autocomplete="address-level2" placeholder="City or area" />
+            </div>
+
+            <div class="form-row">
+              <label for="q-message">Project details <span class="opt">(optional)</span></label>
+              <textarea id="q-message" name="message" rows="4" placeholder="Tell us about your roof, the problem, or what you're looking for."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-call btn-lg form-submit">
+              <span class="submit-label">Request My Free Quote</span>
+            </button>
+
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
       </div>
     </section>
 
